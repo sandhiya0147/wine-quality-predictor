@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wine Quality Prediction (KNN)</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>Wine Quality Prediction (KNN)</h2>
+  <form method="POST">
+    {% for col in feature_columns %}
+      <input type="text" name="{{ col }}" placeholder="{{ col }}" required><br>
+    {% endfor %}
+    <input type="submit" value="Predict">
+  </form>
+  {% if result %}
+    <h3>Prediction: {{ result }}</h3>
+  {% endif %}
+</body>
+</html>
